@@ -42,13 +42,6 @@ public class LockConsumer {
             Integer value = queue.dequeue();
             System.out.println("Dequeue " + value);
         }
-
-        try {
-            System.in.read();
-        }
-        catch (Exception ex) {
-            ex.printStackTrace();
-        }
     }
 
     private class MyConcurrentLinkedQueue<E> {
