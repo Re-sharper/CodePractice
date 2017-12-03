@@ -75,6 +75,11 @@ public class LockConsumer {
                 if (head != null) {
                     dummy.next = head.next;
                     result = head.value;
+
+                    if(head == tail) {
+                        tail = dummy; // Back to empty queue
+                    }
+
                     size--;
                 }
             }
