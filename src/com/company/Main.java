@@ -1,7 +1,11 @@
 package com.company;
 
+import com.company.multithreading.ConcurrentCircularBuffer;
+import com.company.multithreading.LockConsumer;
 import com.company.multithreading.ThreadPoolWorker;
 import com.company.multithreading.ThreadedWorker;
+import com.company.multithreading.tests.CircularBufferTest;
+import com.company.multithreading.tests.ConcurrentCircularBufferTest;
 import com.company.practice.KMax;
 import com.company.practice.NextSparseNumber;
 import com.company.practice.ZigzagSort;
@@ -23,11 +27,15 @@ public class Main {
 
         try {
             //ThreadedWorker worker = new ThreadedWorker();
-            ThreadPoolWorker worker = new ThreadPoolWorker();
+            //ThreadPoolWorker worker = new ThreadPoolWorker();
+            //LockConsumer worker = new LockConsumer();
+            //CircularBufferTest worker = new CircularBufferTest();
+            ConcurrentCircularBufferTest worker = new ConcurrentCircularBufferTest();
             worker.run();
         }
         catch (Exception ex) {
-            System.out.println(ex);
+            System.out.println("Caught exception in main()");
+            ex.printStackTrace();
         }
     }
 }
